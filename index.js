@@ -1,4 +1,7 @@
-
+var ids = [];
+var nombres = [];
+var udcaja = [];
+var precio = [];
 
 cargarDatos();
 function cargarDatos() {
@@ -17,6 +20,16 @@ function cargarDatos() {
 function dividirPorLineas(datos) {
     lineas = datos.split(/\n/);
     for (i = 0; i < lineas.length; i++) {
+        dividirPorCampo(lineas[i])
         //console.log(i+") "+lineas[i]) //Muestra por consola cada linea
     }
 }
+
+function dividirPorCampo(linea) {
+    campos = linea.split(";");
+    id.push(campos[0]);
+    nombres.push(campos[1]);
+    udcaja.push(campos[2]);
+    precio.push(campos[3]);
+}
+
