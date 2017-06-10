@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+    <input id="uno" type="button" value="uno" onclick="actualizarVentana(this)">
+    <input id="dos" type="button" value="dos" onclick="actualizarVentana(this)">
+    <input id="tres" type="button" value="tres" onclick="actualizarVentana(this)">
+    <br>
+    <iframe id="iframe" src="uno.html"></iframe>
+    <script>
+        //Cuando en el on click envio como parametro this, estoy enviando el boton
+        function actualizarVentana(boton) {
+            //cargar vista
+            var iframe = document.getElementById("iframe");
+            iframe.src = boton.value + ".html";
+            //restear colores boton
+            document.getElementById("uno").style.backgroundColor = "white";
+            document.getElementById("dos").style.backgroundColor = "white";
+            document.getElementById("tres").style.backgroundColor = "white";
+            boton.style.backgroundColor = "orange";
+        }
+    </script>
+</body>
+
+</html>
