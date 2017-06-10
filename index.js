@@ -31,7 +31,7 @@ function dividirPorCampo(linea) {
     ids.push(campos[0]);
     nombres.push(campos[1]);
     udcaja.push(campos[2]);
-    precio.push(campos[3]);
+    precio.push(campos[3]+"\u20ac");
 }
 
 function cargarDatosTabla(condicion) {
@@ -52,14 +52,20 @@ function cargarDatosTabla(condicion) {
 }
 
 function insertarFila(indice) {
-    var filaTabla = `
+    /*var filaTabla = `
     <tr>
         <td>${ids[indice]}</td>
         <td>${nombres[indice]}</td>
         <td>${udcaja[indice]}</td>
         <td>${precio[indice]}</td>
     </tr>
-    `
+    `*/
+    var filaTabla = "<tr><td>"+ids[indice]+"</td>";
+    filaTabla += "<td>"+nombres[indice]+"</td>";
+    filaTabla += "<td>"+udcaja[indice]+"</td>";
+    filaTabla += "<td>"+precio[indice]+"</td></tr>";  
+
+
     document.getElementById("tabla").innerHTML += filaTabla
 
 }
