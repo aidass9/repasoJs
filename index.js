@@ -41,6 +41,7 @@ function cargarDatosTabla(condicion) {
     //ingresamos datos
     for (i = 0; i < ids.length; i++) {
         if (condicion === true) {
+            //Si es true, muestra todas las filas
             insertarFila(i);
         }
         else if (ids[i].charAt(0) === "1") {
@@ -61,4 +62,16 @@ function insertarFila(indice) {
     `
     document.getElementById("tabla").innerHTML += filaTabla
 
+}
+
+function mostrarPorId(boton) {
+    var valorBoton = boton.innerHTML;
+    if (valorBoton === "Mostrar id 1000-1999") {
+        boton.innerHTML = "Mostrar todos";
+        cargarDatosTabla(false);
+    }
+    else {
+        boton.innerHTML = "Mostrar id 1000-1999";
+        cargarDatosTabla(true);
+    }
 }
